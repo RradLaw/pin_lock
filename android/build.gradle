@@ -33,6 +33,7 @@ android {
     defaultConfig {
         minSdkVersion 16
     }
+    namespace 'nl.dutchcodingcompany.pin_lock'
 }
 
 dependencies {
