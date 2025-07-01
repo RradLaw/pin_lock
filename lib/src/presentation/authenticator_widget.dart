@@ -94,7 +94,8 @@ class _AuthenticatorWidgetState extends State<AuthenticatorWidget> {
               builder: widget.lockScreenBuilder,
               inputNodeBuilder: widget.inputNodeBuilder,
               availableMethods: event.availableBiometricMethods,
-              userFacingMessage: widget.userFacingBiometricAuthenticationMessage,
+              userFacingMessage:
+                  widget.userFacingBiometricAuthenticationMessage,
             ),
           );
           if (!_isShowingSplashScreen) {
@@ -129,7 +130,8 @@ class _AuthenticatorWidgetState extends State<AuthenticatorWidget> {
         if (snapshot.hasData && !_isShowingSplashScreen) {
           return widget.child;
         }
-        return widget.splashScreenBuilder?.call() ?? const Center(child: CircularProgressIndicator());
+        return widget.splashScreenBuilder?.call() ??
+            const Center(child: CircularProgressIndicator());
       },
     );
   }
@@ -172,7 +174,8 @@ class _LockScreen extends StatelessWidget {
               error: state.error,
               availableBiometricMethods: availableMethods,
               onBiometricAuthenticationRequested: () {
-                BlocProvider.of<LockCubit>(context).unlockWithBiometrics(userFacingMessage);
+                BlocProvider.of<LockCubit>(context)
+                    .unlockWithBiometrics(userFacingMessage);
               },
             ),
           ),
